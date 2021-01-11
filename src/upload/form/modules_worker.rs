@@ -52,7 +52,7 @@ fn add_metadata(mut form: Form, assets: &ModulesAssets) -> Result<Form, failure:
         bindings: assets.bindings(),
     });
 
-    let metadata = Part::text((metadata_json).to_string())
+    let metadata = Part::text(metadata_json.to_string())
         .file_name("metadata.json")
         .mime_str("application/json")?;
 
@@ -65,7 +65,7 @@ fn add_session_config(
     mut form: Form,
     session_config: serde_json::Value,
 ) -> Result<Form, failure::Error> {
-    let wrangler_session_config = Part::text((session_config).to_string())
+    let wrangler_session_config = Part::text(session_config.to_string())
         .file_name("")
         .mime_str("application/json")?;
 

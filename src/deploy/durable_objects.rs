@@ -37,7 +37,7 @@ impl DurableObjectNSTarget {
     }
 
     pub fn deploy(&self, user: &GlobalUser) -> Result<String, failure::Error> {
-        log::info!("publishing schedules");
+        log::info!("publishing durable object");
         let schedule_worker_addr = format!(
             "https://api.cloudflare.com/client/v4/accounts/{}/workers/durable_objects/namespaces",
             self.account_id,

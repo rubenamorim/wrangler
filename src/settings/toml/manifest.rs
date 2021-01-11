@@ -290,7 +290,7 @@ impl Manifest {
                     })
                     .collect();
 
-                for ns in namespaces.into_iter() {
+                for ns in namespaces {
                     deployments.push(ns);
                 }
             }
